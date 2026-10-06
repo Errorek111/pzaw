@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script>
+            function dodaj(){
+                var e = document.getElementById("licznik");
+                var value = parseInt(e.value);
+                value++;
+                e.value = value;
+            }
+            function minus(){
+                var e = document.getElementById("licznik");
+                var value = parseInt(e.value);
+                value--;
+                e.value = value;
+            }
+        </script>
+</head>
+<body>
+    <button type="button" onclick="minus()">-</button><input type="text" id="licznik" value="0" disabled="true"><button type="button" onclick="dodaj()">+</button>
+</body>
+</html>
