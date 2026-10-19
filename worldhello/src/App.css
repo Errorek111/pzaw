@@ -17,3 +17,9 @@ main{
     flex-direction: column;
     justify-content: space-evenly;
 }
+ul{
+    text-align: left;
+}
+li{
+    text-align: left;
+}

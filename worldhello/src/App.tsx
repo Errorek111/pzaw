@@ -39,7 +39,7 @@ pageNum,
     );
 }
 interface Music{
-    title: string;
+    name: string;
     band:string;
     genre:string
     cover: string;
@@ -47,20 +47,22 @@ interface Music{
     songs?:[{title:string,time:number}];
 }
 function Album({
-title,
+name,
 band,
 genre,
 cover,
 year,
 songs,
 }: Music){
+    const listItems = songs.map(songs=> <li>{songs.title} - {songs.time}</li>);
     return(
         <section>
             <img src={cover} />
-            <p>{title}</p>
+            <p>{name}</p>
             <p>{band}</p>
             <p>{genre}</p>
             <p>{year}</p>
+            <ol>{listItems}</ol>
         </section>
     );
 }
@@ -79,7 +81,7 @@ function App(){
 
             </span>
             <span>
-                <Album title="Kessoku Band" band="Kessoku Band" genre="Rock" year={2022} cover="https://upload.wikimedia.org/wikipedia/en/3/3e/Kessoku_Band_album_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled" songs={[{title:"title",time:3}]} />
+                <Album name="Kessoku Band" band="Kessoku Band" genre="Rock" year={2022} cover="https://upload.wikimedia.org/wikipedia/en/3/3e/Kessoku_Band_album_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled" songs={[{title:"Seishun Complex",time:3.23},{title:"Hitoribocchi Tokyo",time:3.52},{title:"Distortion!",time:3.23},{title:"Secret Base",time:3.52},{title:"Guitar, Loneliness and Blue Planet",time:3.48},{title:"I Can't Sing a Love Song",time:3.08},{title:"That Band",time:3.33},{title:"Karakara",time:4.25},{title:"The Little Sea",time:3.43},{title:"What Is Wrong With",time:3.47},{title:"Never Forget",time:3.43},{title:"If I Could Be a Constellation",time:4.18},{title:"Flashbacker",time:4.35},{title:"Rockn' Roll, Morning Light Falls on You",time:4.31}]} />
             </span>
         </main>
     );
