@@ -1,25 +1,22 @@
+@import "bootstrap";
 img{
     width: 256px;
-}
-section{
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: max-content;
-}
-span{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
 }
 ul{
     text-align: left;
 }
 li{
     text-align: left;
+}
+td.time{
+    text-align: right;
+}
+tr:nth-of-type(even){
+    background-color: rgb(210, 210, 200);
+}
+tr:hover{
+    background-color: rgb(190, 190, 190);
+}
+table{
+    width: 100%;
 }

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export interface Album{
    name:string,
 band:string,
@@ -16,28 +14,31 @@ cover,
 year,
 songs,
 }:Album){
-    const [isOpen, setIsOpen] = useState(true);
     if(songs.length == 0){
         return(
-            <section>
+            <section className={"Cards col"}>
                 <img src={cover} />
                 <p>{name}</p>
                 <p>{band}</p>
                 <p>{genre}</p>
                 <p>{year}</p>
-                <p>Ten album nie ma piosenek</p>
+                <p className="alert alert-info">Ten album nie ma piosenek</p>
             </section>
         )
     }
     else{
         return(
-            <section>
+            <section className={"Cards col"}>
                 <img src={cover} />
                 <p>{name}</p>
                 <p>{band}</p>
                 <p>{genre}</p>
                 <p>{year}</p>
-                <ol>{songs.map(songs => <li>{songs.title} - {songs.time}</li>)}</ol>
+                <table>
+                    <tbody>
+                    {songs.map(songs => <tr><td>{songs.title}</td><td className="time">{songs.time}</td></tr>)}
+                    </tbody>
+                </table>
             </section>
         )
     }

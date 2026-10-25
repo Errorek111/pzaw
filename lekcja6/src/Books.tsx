@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export interface Book{
 title:string;
 cover:string;
@@ -14,7 +12,7 @@ pageNum
 }: Book){
     if(year < 2000){
         return(
-            <section>
+            <section className={"Cards col"}>
                 <h3>Klasyka</h3>
                 <img src={cover} />
                 <p>{title}</p>
@@ -25,7 +23,7 @@ pageNum
     }
     else{
         return(
-            <section>
+            <section className={"Cards col"}>
                 <img src={cover} />
                 <p>{title}</p>
                 <p>{year}</p>

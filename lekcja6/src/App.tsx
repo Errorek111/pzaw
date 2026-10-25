@@ -70,18 +70,18 @@ items}){
     }
     if(isOpen){
         return(
-            <>
+            <section>
             <h1 onClick={ToggleVisible}>{header} ▾</h1>
-            <span>{items}</span>
-            </>
+            <span className="row justify-content-center">{items}</span>
+            </section>
         );
     }
     else{
          return(
-            <>
+            <section className="row">
             <h1 onClick={ToggleVisible}>{header} ▸</h1>
-            <span style={{display: 'none'}}>{items}</span>
-            </>
+            <span style={{display: 'none'}} className="Cards col">{items}</span>
+            </section>
         );       
     }
 }
@@ -103,7 +103,7 @@ function App(){
     );
     const mostSongsItem = map(mostSongs,AlbumObj);
     return(
-        <main>
+        <main className={'container-fluid text-center'}>
             <Section header="Filmy" items={filmItems}/>
             <Section header="Książki" items={bookItems}/>
             <Section header="Albumy" items={albumItems}/>

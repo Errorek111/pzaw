@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export interface Film{
     title: string;
     poster: string;
@@ -11,10 +9,9 @@ title,
 poster,
 year,
 rating}: Film){
-    const [isOpen, setIsOpen] = useState(true);
     if(rating >= 8){
         return(
-            <section>
+            <section className={"Cards col"}>
                 <h3>Polecany</h3>
                 <img src={poster} />
                 <p>{title}</p>
@@ -25,7 +22,7 @@ rating}: Film){
     }
     else{
         return(
-            <section>
+            <section className={"Cards col"}>
                 <img src={poster} />
                 <p>{title}</p>
                 <p>{year}</p>
