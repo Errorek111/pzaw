@@ -44,7 +44,7 @@ interface Music{
     genre:string
     cover: string;
     year:number;
-    songs?:[{title:string,time:number}];
+    songs?:{title:string,time:number}[];
 }
 function Album({
 name,
