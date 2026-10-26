@@ -96,7 +96,7 @@ function App(){
     const oldMovieItems = map(oldMovies,Movie);
     const booksByYear = [...books].sort(
         (a,b) => a.year - b.year
-    );
+    ).reverse();
     const booksByYearItems = map(booksByYear,BookObj);
     const mostSongs = [...albums].sort(
         (a,b) => a.songs.length + b.songs.length
@@ -108,7 +108,7 @@ function App(){
             <Section header="Książki" items={bookItems}/>
             <Section header="Albumy" items={albumItems}/>
             <Section header="Filmy sprzed 2010 roku" items={oldMovieItems}/>
-            <Section header="Książki od najstarszej" items={booksByYearItems}/>
+            <Section header="Książki od najnowszej" items={booksByYearItems}/>
             <Section header="Album z największą liczbą utworów" items={mostSongsItem[0]}/>
         </main>
     );
