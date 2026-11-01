@@ -24,7 +24,7 @@ songs,
         return(
             <section className={"Cards col"}>
                 <img src={cover} />
-                <p>{name}</p>
+                <p>{title}</p>
                 <p>{band}</p>
                 <p>{genre}</p>
                 <p>{year}</p>
@@ -36,7 +36,7 @@ songs,
         return(
             <section className={"Cards col"}>
                 <img src={cover} />
-                <p>{name}</p>
+                <p>{title}</p>
                 <p>{band}</p>
                 <p>{genre}</p>
                 <p>{year}</p>
