@@ -1,7 +1,7 @@
 import React  from "react";
 
 export interface Album{
-   name:string,
+   title:string,
 band:string,
 genre:string,
 cover:string,
@@ -9,7 +9,7 @@ year:number,
 songs:{title:string,time:number}[];
 }
 export function AlbumObj({
-name,
+title,
 band,
 genre,
 cover,
