@@ -153,7 +153,7 @@ function App() {
     const mostSongs = [...albums].sort(
         (a, b) => a.songs.length + b.songs.length
     );
-//            <section>{map(tasks,Task)}</section>
+//            <Tasks taskList={tasks} />
     return (
         <main className={'container-fluid text-center'}>
             <Section header="Filmy" items={films} id="films" mapFunction={Movie} />
@@ -162,7 +162,7 @@ function App() {
             <Section header="Filmy sprzed 2010 roku" items={oldMovies} id="oldfilms" mapFunction={Movie} />
             <Section header="Książki od najnowszej" items={booksByYear} id="booksByYear" mapFunction={BookObj} />
             <Section header="Album z największą liczbą utworów" items={mostSongs.slice(0,1)} mapFunction={AlbumObj} />
-            <Tasks taskList={tasks} />
+            <section>{map(tasks,Task)}</section>
             <span>{document.querySelectorAll("input[type='checkbox']:checked").length}</span>
         </main>
     );
