@@ -155,7 +155,7 @@ function App() {
             <Section header="Albumy" items={albums} id="albums" mapFunction={AlbumObj} />
             <Section header="Filmy sprzed 2010 roku" items={oldMovies} id="oldfilms" mapFunction={Movie} />
             <Section header="Książki od najnowszej" items={booksByYear} id="booksByYear" mapFunction={BookObj} />
-            <Section header="Album z największą liczbą utworów" items={mostSongs} mapFunction={AlbumObj} />
+            <Section header="Album z największą liczbą utworów" items={mostSongs.slice(0,1)} mapFunction={AlbumObj} />
         </main>
     );
 }
