@@ -53,17 +53,11 @@ const albums: Album[] = [
     }
 ];
 const tasks: TaskObj[] = [
-    {title:"Task1",finished:false},
-    {title:"Task2",finished:true}
+    { title: "Task1", finished: false },
+    { title: "Task2", finished: true }
 ];
 
-export function map(array, transformFn) {
-    const result = [];
-    for (let item of array) {
-        result.push(transformFn(item));
-    }
-    return result;
-}
+
 function Section({
     header,
     items,
@@ -86,13 +80,14 @@ function Section({
         globalThis.searchString = textBox.currentTarget.value;
         setSearchString(textBox.currentTarget.value);
     }
-    const itemsMap = map(items, mapFunction);
+    const itemsMap = items.map(mapFunction);
     if (isOpen && id) {
         if (searchString != "") {
             const filteredItems = items.filter(
                 (item) => item.title.toLowerCase().includes(searchString.toLowerCase()) == true
             );
-            const filteredItemsMap = map(filteredItems, mapFunction);
+            const filteredItemsMap = filteredItems.map(mapFunction);
+
             if (filteredItemsMap.length > 0) {
                 return (
                     <section>
@@ -153,7 +148,9 @@ function App() {
     const mostSongs = [...albums].sort(
         (a, b) => a.songs.length + b.songs.length
     );
-//            <Tasks taskList={tasks} />
+    //            <Tasks taskList={tasks} />
+    //            <section>{tasks.map(Task)}</section>
+
     return (
         <main className={'container-fluid text-center'}>
             <Section header="Filmy" items={films} id="films" mapFunction={Movie} />
@@ -161,8 +158,7 @@ function App() {
             <Section header="Albumy" items={albums} id="albums" mapFunction={AlbumObj} />
             <Section header="Filmy sprzed 2010 roku" items={oldMovies} id="oldfilms" mapFunction={Movie} />
             <Section header="Książki od najnowszej" items={booksByYear} id="booksByYear" mapFunction={BookObj} />
-            <Section header="Album z największą liczbą utworów" items={mostSongs.slice(0,1)} mapFunction={AlbumObj} />
-            <section>{map(tasks,Task)}</section>
+            <Section header="Album z największą liczbą utworów" items={mostSongs.slice(0, 1)} mapFunction={AlbumObj} />
             <span>{document.querySelectorAll("input[type='checkbox']:checked").length}</span>
         </main>
     );
